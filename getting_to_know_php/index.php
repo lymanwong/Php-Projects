@@ -20,7 +20,7 @@
       // start of PHP code
       // $myName = "Lyman"
       echo "My first line of PHP!";
-
+      print "<p>Start a PHP localhost by using : 'php -S localhost:8000' in terminal</p>";
       // for loop
       echo "<p>I'm using a for loop...</p>";
       for($count = 0; $count < 5; $count = $count + 1){
@@ -66,8 +66,43 @@
       if (strpos($word, "z")===true){
         print "<p>There is a z in the word</p>";
       } else;
-      print "<p>There are no z's in the word.</p>"
+      print "<p>There are no z's in the word.</p>";
+
+      // rounding numbers
+      print "<p>Rounding PI to a single digit</p>";
+      print round(M_PI);
+      print "<p>Rounding PI to a 3 digits</p>";
+      print round(M_PI, 3);
+
+      // using rand - random
+      print "<p>My random number is " . rand();
+      print "<p>A random letter from $word is " . $word[rand(0, strlen($word))] . "</p>";
+
+      //adding elements to an array
+      $myArray = array();
+      print "<p>My array has " . count($myArray) . " elements.</p>";
+      array_push($myArray, "1", "apple", "3", "orange", "5");
+      print "<p>I'm pushing contents into it now.  My array now contains..." . count($myArray) . " elements.</p>";
+
+      //iterating through an array
+      print "<p>My array contains...</p>";
+      for($i = 0; $i < sizeof($myArray); $i++){
+        print "<p>$myArray[$i]</p>";
+      }
+
+      //sorting an array
+      print "<p>If I sort the array, I would get:</p>";
+      sort($myArray);
+      print join("<p>", $myArray);
+      //reverse sorting
+      print "<p>If I reverse sort the array, I would get:</p>";
+      rsort($myArray);
+      print join("<p>", $myArray);
+
+      //
+
       ?>
+
     </p>
   </body>
   </html>
