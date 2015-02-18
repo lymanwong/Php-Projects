@@ -84,7 +84,7 @@
       array_push($myArray, "1", "apple", "3", "orange", "5");
       print "<p>I'm pushing contents into it now.  My array now contains..." . count($myArray) . " elements.</p>";
 
-      //iterating through an array
+      //For loop - iterating through an array
       print "<p>My array contains...</p>";
       for($i = 0; $i < sizeof($myArray); $i++){
         print "<p>$myArray[$i]</p>";
@@ -99,7 +99,82 @@
       rsort($myArray);
       print join("<p>", $myArray);
 
-      //
+      //creating a class and a method
+      class Dog {
+        public $numLegs = 4;
+        public $name;
+        public function __construct($name){
+          $this->name = $name;
+        }
+        public function bark(){
+          echo "<p>I just created a new dog object named " . $this->name . ". Say hello!</p>";
+          echo "Woof!";
+        }
+      }
+
+      $newDog = new Dog ("Sparky");
+      //calling a method to an object
+      $newDog->bark();
+
+      //inheriance
+      class Animal {
+        public $hasLegs = true;
+        public $name;
+        public function __construct($name){
+          $this->name = $name;
+        }
+      }
+
+      class Cat extends Animal {
+        public function meow(){
+          echo "<p>I just created a new cat object named " . $this->name . ". I've inherited legs from the Animal Class. Say hello!</p>";
+          echo "Meow!";
+        }
+      }
+
+      if (property_exists(Cat, "hasLegs")){
+        echo "I have legs!";
+      }
+
+      $cat = new Cat("James");
+      $cat->meow();
+
+
+      // overriding a parent class
+      class Shape {
+        public $sides = true;
+      }
+
+      class Triangle extends Shape {
+        public $sides = 3;
+
+      }
+
+      $triangle = new Triangle();
+      echo "<p>I am overriding my parent value of sides is true and created a Triangle object, inherited from the Shape class.  Now I have " . $triangle->sides . " sides.</p>";
+
+      //using constants
+
+      class Person {
+        const awesomeness = "maximum";
+      }
+
+      class Me extends Person {
+
+      }
+
+      if (Me::awesomeness == "maximum"){
+        echo Me::awesomeness;
+      }
+
+      // Static - you can call a method without creating an object
+
+      class Child {
+        public static function laugh(){
+          echo "<p>I'm calling a object method without creating an object! hahahahaha</p>";
+        }
+      }
+      Child::laugh();
 
       ?>
 
