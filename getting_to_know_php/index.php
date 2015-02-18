@@ -6,12 +6,12 @@
       differences in how form elements appear between Firefox and IE
       See: http://necolas.github.com/normalize.css/
     -->
-    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="bootstrap/css/normalize.css">
     <!--
       application.css is where you put your styles
     -->
-    <link rel="stylesheet" href="/application.css">
-
+    <link rel="stylesheet" href="bootstrap/css/application.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <title>My simple PHP site</title>
   </head>
   <body>
